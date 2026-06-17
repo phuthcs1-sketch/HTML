@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Key2hand – Affordable second-hand keychains. Anime, vintage, cute and custom charms.">
+  <title>Key2hand – Second Hand Keychains</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ---- Hero ---- */
+    .hero {
+      padding: calc(var(--nav-height) + 60px) 0 60px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .hero-title { margin-bottom: 16px; }
+    .hero-title span { color: var(--primary); }
+
+    .hero-desc {
+      font-size: 1rem;
+      margin-bottom: 28px;
+      max-width: 440px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 28px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-item .value {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .stat-item .label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 1;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    /* ---- Categories ---- */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .category-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .category-card:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .cat-emoji { font-size: 1.8rem; }
+    .cat-name { font-size: 0.82rem; font-weight: 600; color: var(--text); }
+    .cat-count { font-size: 0.72rem; color: var(--text-muted); }
+
+    /* ---- Trust ---- */
+    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+    /* ---- Testimonials ---- */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+    /* ---- CTA ---- */
+    .cta-box {
+      background: var(--primary);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+      color: white;
+    }
+
+    .cta-box h2 { color: white; margin-bottom: 10px; }
+    .cta-box p { color: rgba(255,255,255,0.8); margin-bottom: 24px; }
+
+    .btn-white {
+      background: white;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .btn-white:hover { background: #F3F4F6; }
+
+    @media (max-width: 1024px) {
+      .categories-grid { grid-template-columns: repeat(3, 1fr); }
+      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+      .hero-image { display: none; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 16px; }
+      .cta-box { padding: 36px 24px; }
+    }
+
+    @media (max-width: 480px) {
+      .categories-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/logo.png" alt="Key2hand" class="nav-logo-img"> Key2hand
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-actions">
+      <div id="auth-nav" style="display:flex;align-items:center;gap:8px"></div>
+      <a href="cart.html" class="nav-cart-btn" id="nav-cart-btn" aria-label="Cart">
+        🛒 Cart
+        <span class="cart-badge" id="cart-badge">0</span>
+      </a>
+      <button class="nav-menu-btn" id="menu-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav-drawer-overlay" id="drawer-overlay"></div>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="index.html">🏠 Home</a>
+  <a href="shop.html">🛍️ Shop</a>
+  <a href="about.html">About</a>
+  <a href="cart.html">🛒 Cart</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag anim-fade-up">🗝️ 30+ Keychains In Stock</div>
+        <h1 class="hero-title anim-fade-up delay-100">
+          Second-Hand Keychains,<br>
+          <span>Great Prices</span>
+        </h1>
+        <p class="hero-desc anim-fade-up delay-200">
+          Handpicked, authentic second-hand keychains — anime, vintage, cute and custom.
+          Each piece is carefully checked and honestly described.
+        </p>
+        <div class="hero-btns anim-fade-up delay-300">
+          <a href="shop.html" class="btn btn-primary btn-lg">Shop Now →</a>
+          <a href="about.html" class="btn btn-secondary btn-lg">Our Story</a>
+        </div>
+        <div class="hero-stats anim-fade-up delay-300">
+          <div class="stat-item">
+            <div class="value">30+</div>
+            <div class="label">Keychains</div>
+          </div>
+          <div class="stat-item">
+            <div class="value">500+</div>
+            <div class="label">Happy Buyers</div>
+          </div>
+          <div class="stat-item">
+            <div class="value">4.8★</div>
+            <div class="label">Avg. Rating</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://picsum.photos/seed/hero-main/600/600" alt="Keychain collection">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="section" style="background:var(--bg)">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>Shop by Category</h2>
+      <p>Find the style you love</p>
+    </div>
+    <div class="categories-grid" id="categories-grid"></div>
+  </div>
+</section>
+
+<!-- Featured -->
+<section class="section" style="background:var(--white)">
+  <div class="container">
+    <div class="section-header reveal" style="display:flex;justify-content:space-between;align-items:flex-end">
+      <div>
+        <h2>Featured Picks</h2>
+        <p>Hand-selected favourites — grab them before they're gone</p>
+      </div>
+      <a href="shop.html" class="btn btn-secondary" style="flex-shrink:0">View All →</a>
+    </div>
+    <div class="products-grid" id="featured-grid"></div>
+  </div>
+</section>
+
+<!-- Trust -->
+<section class="section" style="background:var(--bg)">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-badge reveal delay-1">
+        <div class="trust-icon" style="background:#DCFCE7;color:var(--green)">🔍</div>
+        <div>
+          <h4>Carefully Inspected</h4>
+          <p style="font-size:0.85rem;margin-top:4px">Every item is checked for quality. Condition is accurately described.</p>
+        </div>
+      </div>
+      <div class="trust-badge reveal delay-2">
+        <div class="trust-icon" style="background:var(--primary-light);color:var(--primary)">💰</div>
+        <div>
+          <h4>Affordable Prices</h4>
+          <p style="font-size:0.85rem;margin-top:4px">Save 40–70% compared to retail. Real value for your money.</p>
+        </div>
+      </div>
+      <div class="trust-badge reveal delay-3">
+        <div class="trust-icon" style="background:#DBEAFE;color:#2563EB">📦</div>
+        <div>
+          <h4>Safe Packaging</h4>
+          <p style="font-size:0.85rem;margin-top:4px">Bubble-wrapped and shipped in sturdy boxes so items arrive perfect.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section" style="background:var(--white)">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>What Customers Say</h2>
+      <p>Real reviews from happy buyers</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal delay-1">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Got a Totoro keychain in absolutely perfect condition. Packed super carefully and arrived looking brand new. Already ordering more!"</p>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://picsum.photos/seed/user1/80/80" alt="Linh N.">
+          <div>
+            <div class="testimonial-name">Linh Nguyen</div>
+            <div style="font-size:0.75rem;color:var(--text-light)">Da Nang City</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-2">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Found a vintage brass compass I'd been hunting for months. Condition was exactly as described — minor scratch but adds character!"</p>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://picsum.photos/seed/user2/80/80" alt="Minh T.">
+          <div>
+            <div class="testimonial-name">Minh Tran</div>
+            <div style="font-size:0.75rem;color:var(--text-light)">Hanoi</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-3">
+        <div class="stars">★★★★☆</div>
+        <p class="testimonial-text">"Great selection of cute stuff. The strawberry resin charm is even cuter in person! Will definitely buy again. Shipping was fast too."</p>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://picsum.photos/seed/user3/80/80" alt="An P.">
+          <div>
+            <div class="testimonial-name">An Pham</div>
+            <div style="font-size:0.75rem;color:var(--text-light)">Da Nang</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background:var(--bg)">
+  <div class="container">
+    <div class="cta-box reveal">
+      <h2>Ready to Find Your Next Treasure?</h2>
+      <p>Browse our full collection of second-hand keychains and charms.</p>
+      <a href="shop.html" class="btn btn-white btn-lg">Browse All Keychains</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom:10px">
+          <img src="assets/images/logo.png" alt="Key2hand" class="nav-logo-img"> Key2hand
+        </div>
+        <p>Your favourite place for unique, affordable second-hand keychains.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html?cat=Anime">Anime</a></li>
+          <li><a href="shop.html?cat=Cute">Cute</a></li>
+          <li><a href="shop.html?cat=Vintage">Vintage</a></li>
+          <li><a href="shop.html?cat=Metal">Metal</a></li>
+          <li><a href="shop.html?cat=Custom">Custom</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">How to Order</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">hello@key2hand.com</a></li>
+          <li><a href="#">Zalo: 090 xxx xxxx</a></li>
+          <li><a href="#">Da Nang City</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Key2hand. All rights reserved.</span>
+      <span>Items are second-hand — conditions accurately described.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const CATEGORY_META = {
+    'Anime':   { emoji: '⛩️' },
+    'Cute':    { emoji: '🧸' },
+    'Vintage': { emoji: '🕰️' },
+    'Metal':   { emoji: '⚙️' },
+    'Custom':  { emoji: '🎨' },
+    'Acrylic': { emoji: '💎' },
+  };
+
+  const counts = {};
+  PRODUCTS.forEach(p => { counts[p.category] = (counts[p.category] || 0) + 1; });
+
+  document.getElementById('categories-grid').innerHTML =
+    Object.entries(CATEGORY_META).map(([name, meta]) => `
+      <a href="shop.html?cat=${name}" class="category-card reveal">
+        <div class="cat-emoji">${meta.emoji}</div>
+        <span class="cat-name">${name}</span>
+        <span class="cat-count">${counts[name] || 0} items</span>
+      </a>
+    `).join('');
+
+  document.getElementById('featured-grid').innerHTML =
+    getFeaturedProducts().map(renderProductCard).join('');
+
+  setTimeout(initScrollReveal, 50);
+</script>
+</body>
+</html>

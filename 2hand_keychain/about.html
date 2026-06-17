@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Key2hand – a Da Nang City organization dedicated to giving second-hand keychains a new home.">
+  <title>About – Key2hand</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .about-photo {
+      width: 130px; height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--border);
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    .about-story {
+      max-width: 660px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+    }
+
+    .about-story p { font-size: 0.95rem; line-height: 1.8; margin-bottom: 16px; }
+    .about-story p:last-child { margin-bottom: 0; }
+
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+    .value-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .value-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+    .value-card h3 { margin-bottom: 6px; font-size: 1rem; }
+    .value-card p { font-size: 0.86rem; }
+
+    .social-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      background: var(--white);
+      border: 1px solid var(--border);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+
+    .social-link:hover { border-color: var(--primary); color: var(--primary); }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: border-color var(--transition);
+    }
+
+    .faq-item:hover { border-color: #9CA3AF; }
+
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .faq-toggle { color: var(--primary); font-size: 1.1rem; transition: transform 0.2s ease; }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+    .faq-a {
+      display: none;
+      margin-top: 10px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-a { display: block; }
+
+    @media (max-width: 768px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .about-story { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/images/logo.png" alt="Key2hand" class="nav-logo-img"> Key2hand</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html" class="active">About</a>
+    </div>
+    <div class="nav-actions">
+      <div id="auth-nav" style="display:flex;align-items:center;gap:8px"></div>
+      <a href="cart.html" class="nav-cart-btn" aria-label="Cart">
+        🛒 Cart<span class="cart-badge" id="cart-badge">0</span>
+      </a>
+      <button class="nav-menu-btn" id="menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+<div class="nav-drawer-overlay" id="drawer-overlay"></div>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="index.html">🏠 Home</a>
+  <a href="shop.html">🛍️ Shop</a>
+  <a href="about.html">About</a>
+  <a href="cart.html">🛒 Cart</a>
+</div>
+
+<div class="page-header">
+  <div class="container" style="text-align:center">
+    <div class="breadcrumb" style="justify-content:center">
+      <a href="index.html">Home</a><span class="sep">/</span><span>About</span>
+    </div>
+    <h1>About Key2hand</h1>
+    <p style="margin-top:8px">The organization behind the shop — based in Da Nang City, Vietnam</p>
+  </div>
+</div>
+
+<!-- Story -->
+<section class="section">
+  <div class="container" style="text-align:center">
+    <img class="about-photo reveal"
+      src="assets/images/avatar.png"
+      alt="Key2hand – Da Nang City">
+    <div class="about-story reveal">
+      <p>
+        <strong>Key2hand</strong> is a Da Nang City–based organization passionate about giving
+        pre-loved keychains a second life. Founded by a small team of collectors and keychain
+        enthusiasts right here in Da Nang, we believe every charm has more story left to tell.
+      </p>
+      <p>
+        We source, inspect, and fairly price second-hand keychains — anime, vintage,
+        handcrafted, and more — so that unique pieces stay out of landfills and find
+        people who will truly treasure them. No bulk imports, no dropshipping; only
+        real items with real histories.
+      </p>
+      <p>
+        Our mission is to connect keychain lovers across Vietnam with affordable,
+        authentic pre-owned pieces, while building a community around sustainable
+        collecting right here in Da Nang. If it carries a story, it belongs here. 💜
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section" style="padding-top:0;background:var(--bg)">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center">
+      <h2>What We Stand For</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal delay-1">
+        <span class="value-icon">♻️</span>
+        <h3>Sustainability</h3>
+        <p>Second-hand means less waste. Giving items a second life is better for our planet and our community.</p>
+      </div>
+      <div class="value-card reveal delay-2">
+        <span class="value-icon">🤝</span>
+        <h3>Honesty</h3>
+        <p>Every condition is described accurately. If there's a flaw, we'll tell you and price accordingly.</p>
+      </div>
+      <div class="value-card reveal delay-3">
+        <span class="value-icon">💬</span>
+        <h3>Community</h3>
+        <p>We love connecting collectors. Follow us on social media and join the conversation anytime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div style="max-width:680px;margin:0 auto" class="reveal">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">How do I order? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Browse the shop, add items to your cart, and proceed to checkout. Our team will contact you on Zalo within 24 hours to confirm and arrange delivery.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">How accurate are the condition descriptions? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">"Like New" means never used. "Good" has light signs of use. "Fair" has visible wear but remains charming and functional. We price fairly for each condition.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Do you ship outside Vietnam? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">We currently ship within Vietnam only. International shipping may be available for bulk orders — contact us to discuss.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Can I return an item? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">If an item differs significantly from its description, contact us within 3 days of receiving it. We will work out a fair solution.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Can I request a specific keychain? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Sometimes! Message us with what you're looking for. Our team regularly visits flea markets and conventions across Da Nang and beyond.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section" style="padding-top:0;background:var(--bg)">
+  <div class="container" style="text-align:center">
+    <div class="section-header reveal">
+      <h2>Get In Touch</h2>
+      <p>Follow Key2hand or send us a message — we're always happy to chat</p>
+    </div>
+    <div class="social-links reveal">
+      <a href="#" class="social-link"><i class="fab fa-instagram"></i> @key2hand</a>
+      <a href="#" class="social-link"><i class="fab fa-facebook-f"></i> Key2hand</a>
+      <a href="#" class="social-link"><i class="fab fa-tiktok"></i> @key2hand</a>
+      <a href="#" class="social-link">💬 Zalo</a>
+      <a href="#" class="social-link">📧 hello@key2hand.com</a>
+    </div>
+    <p style="margin-top:20px;font-size:0.85rem;color:var(--text-muted)" class="reveal">
+      📍 Da Nang City, Vietnam
+    </p>
+    <div style="margin-top:28px" class="reveal">
+      <a href="shop.html" class="btn btn-primary btn-lg">Start Shopping →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;padding-top:0">
+      <span>© 2025 Key2hand. All rights reserved. Da Nang City, Vietnam.</span>
+      <a href="index.html" style="color:var(--primary)">← Back to Home</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/main.js"></script>
+<script>
+  function toggleFaq(el) {
+    document.querySelectorAll('.faq-item.open').forEach(i => { if (i !== el) i.classList.remove('open'); });
+    el.classList.toggle('open');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse all second-hand keychains at Key2hand.">
+  <title>Shop – Key2hand</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .shop-layout {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .shop-main { flex: 1; min-width: 0; }
+
+    .shop-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      padding: 16px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+
+    .result-count {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-left: auto;
+    }
+
+    .filter-toggle-btn { display: none; }
+
+    /* Mobile filter sheet */
+    .filter-sheet {
+      position: fixed;
+      bottom: -100%; left: 0; right: 0;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      z-index: 900;
+      padding: 20px 20px 40px;
+      transition: bottom 0.3s ease;
+      max-height: 75vh;
+      overflow-y: auto;
+    }
+
+    .filter-sheet.open { bottom: 0; }
+
+    .filter-sheet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .shop-layout { flex-direction: column; }
+      .filter-sidebar { display: none; }
+      .filter-toggle-btn { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/images/logo.png" alt="Key2hand" class="nav-logo-img"> Key2hand</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html" class="active">Shop</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-actions">
+      <div id="auth-nav" style="display:flex;align-items:center;gap:8px"></div>
+      <a href="cart.html" class="nav-cart-btn" aria-label="Cart">
+        🛒 Cart<span class="cart-badge" id="cart-badge">0</span>
+      </a>
+      <button class="nav-menu-btn" id="menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+<div class="nav-drawer-overlay" id="drawer-overlay"></div>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="index.html">🏠 Home</a>
+  <a href="shop.html">🛍️ Shop</a>
+  <a href="about.html">About</a>
+  <a href="cart.html">🛒 Cart</a>
+</div>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="sep">/</span><span>Shop</span>
+    </div>
+    <h1>All Keychains</h1>
+    <p style="margin-top:6px">Handpicked second-hand charms at unbeatable prices</p>
+  </div>
+</div>
+
+<section class="section" style="padding-top:32px">
+  <div class="container">
+    <div class="shop-layout">
+
+      <!-- Sidebar -->
+      <aside class="filter-sidebar">
+        <div class="filter-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+            <h3 style="font-size:0.95rem">Filters</h3>
+            <button class="btn btn-ghost btn-sm" id="reset-filters-btn">Reset</button>
+          </div>
+
+          <div class="filter-section">
+            <div class="filter-label">Category</div>
+            <label class="filter-checkbox"><input type="checkbox" name="cat" value="Anime"> Anime</label>
+            <label class="filter-checkbox"><input type="checkbox" name="cat" value="Cute"> Cute</label>
+            <label class="filter-checkbox"><input type="checkbox" name="cat" value="Vintage"> Vintage</label>
+            <label class="filter-checkbox"><input type="checkbox" name="cat" value="Metal"> Metal</label>
+            <label class="filter-checkbox"><input type="checkbox" name="cat" value="Custom"> Custom</label>
+            <label class="filter-checkbox"><input type="checkbox" name="cat" value="Acrylic"> Acrylic</label>
+          </div>
+
+          <div class="filter-section">
+            <div class="filter-label">Condition</div>
+            <label class="filter-checkbox"><input type="checkbox" name="cond" value="Like New"> Like New</label>
+            <label class="filter-checkbox"><input type="checkbox" name="cond" value="Good"> Good</label>
+            <label class="filter-checkbox"><input type="checkbox" name="cond" value="Fair"> Fair</label>
+          </div>
+
+          <div class="filter-section">
+            <div class="filter-label">Max Price</div>
+            <input type="range" id="price-range" min="0" max="160000" step="5000" value="160000">
+            <div class="price-range-labels">
+              <span>0 đ</span>
+              <span id="price-range-val">160.000 đ</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <div class="shop-main">
+        <div class="shop-toolbar">
+          <button class="btn btn-secondary btn-sm filter-toggle-btn" id="filter-toggle-btn">
+            ⚙️ Filters
+          </button>
+          <div class="search-wrap">
+            <span class="search-icon"><i class="fa fa-search"></i></span>
+            <input type="text" id="search-input" placeholder="Search keychains...">
+          </div>
+          <select class="sort-select" id="sort-select" style="width:auto;min-width:160px">
+            <option value="newest">Newest First</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+            <option value="rating">Top Rated</option>
+            <option value="discount">Biggest Discount</option>
+          </select>
+          <span class="result-count" id="result-count">30 products</span>
+        </div>
+
+        <div class="category-filter" id="cat-pills" style="margin-bottom:20px">
+          <button class="cat-pill active" data-cat="All">All</button>
+          <button class="cat-pill" data-cat="Anime">⛩️ Anime</button>
+          <button class="cat-pill" data-cat="Cute">🧸 Cute</button>
+          <button class="cat-pill" data-cat="Vintage">🕰️ Vintage</button>
+          <button class="cat-pill" data-cat="Metal">⚙️ Metal</button>
+          <button class="cat-pill" data-cat="Custom">🎨 Custom</button>
+          <button class="cat-pill" data-cat="Acrylic">💎 Acrylic</button>
+        </div>
+
+        <div class="products-grid" id="products-grid"></div>
+
+        <div style="text-align:center;margin-top:32px" id="load-more-wrap">
+          <button class="btn btn-secondary" id="load-more-btn">Load More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mobile Filter Sheet -->
+<div class="filter-sheet" id="filter-sheet">
+  <div class="filter-sheet-header">
+    <h3>Filters</h3>
+    <button class="btn btn-ghost btn-sm" id="close-filter-sheet">✕ Close</button>
+  </div>
+  <div class="filter-section">
+    <div class="filter-label">Category</div>
+    <label class="filter-checkbox"><input type="checkbox" name="cat-m" value="Anime"> Anime</label>
+    <label class="filter-checkbox"><input type="checkbox" name="cat-m" value="Cute"> Cute</label>
+    <label class="filter-checkbox"><input type="checkbox" name="cat-m" value="Vintage"> Vintage</label>
+    <label class="filter-checkbox"><input type="checkbox" name="cat-m" value="Metal"> Metal</label>
+    <label class="filter-checkbox"><input type="checkbox" name="cat-m" value="Custom"> Custom</label>
+    <label class="filter-checkbox"><input type="checkbox" name="cat-m" value="Acrylic"> Acrylic</label>
+  </div>
+  <div class="filter-section">
+    <div class="filter-label">Condition</div>
+    <label class="filter-checkbox"><input type="checkbox" name="cond-m" value="Like New"> Like New</label>
+    <label class="filter-checkbox"><input type="checkbox" name="cond-m" value="Good"> Good</label>
+    <label class="filter-checkbox"><input type="checkbox" name="cond-m" value="Fair"> Fair</label>
+  </div>
+  <button class="btn btn-primary" style="width:100%;margin-top:16px" id="apply-filter-btn">Apply</button>
+</div>
+<div class="nav-drawer-overlay" id="filter-overlay" style="z-index:880"></div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;padding-top:0">
+      <span>© 2025 Key2hand.</span>
+      <a href="index.html" style="color:var(--primary)">← Home</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/main.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>

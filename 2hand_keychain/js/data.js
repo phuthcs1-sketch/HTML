@@ -1,99 +1,154 @@
 // =========================================
-// KEY2HAND — Mock Product Data
+// KEY2HAND — Mock Product Data (Crochet Only)
 // =========================================
 
 const PRODUCTS = [
   {
     id: 1,
-    name: "Totoro Forest Spirit",
-    category: "Acrylic",
+    name: "Móc khóa Bánh mì len đáng yêu",
+    category: "Custom",
     condition: "Like New",
-    price: 35000,
-    originalPrice: 80000,
-    images: [
-      "assets/images/Totoro Forest Spirit.jpg"
-    ],
-    description: "Adorable Totoro acrylic keychain from My Neighbor Totoro. Super kawaii design with glitter fill. Only used for display, no scratches.",
-    tags: ["anime", "ghibli", "cute", "acrylic"],
-    stock: 2,
-    rating: 4.9,
-    reviews: 18,
-    dateAdded: "2025-05-20",
+    price: 25000,
+    originalPrice: 40000,
+    images: ["assets/images/Móc khóa len bánh mì.jpg"],
+    description: "Móc khóa hình ổ bánh mì được móc bằng len sợi cotton mềm mịn, tạo hình siêu dễ thương.",
+    tags: ["crochet", "handmade", "food", "cute"],
+    stock: 12,
+    rating: 4.8,
+    reviews: 6,
+    dateAdded: "2026-06-23",
     featured: true
   },
   {
     id: 2,
-    name: "Naruto Headband",
-    category: "Anime",
-    condition: "Good",
-    price: 25000,
-    originalPrice: 50000,
-    images: [
-      "assets/images/Naruto.jpg"
-    ],
-    description: "Authentic Naruto headband from the popular manga and anime series. Great for fans and collectors.",
-    tags: ["anime", "naruto", "cosplay", "accessory"],
-    stock: 5,
+    name: "Móc khóa Quả Cà chua len mọng nước",
+    category: "Fruit",
+    condition: "Like New",
+    price: 20000,
+    originalPrice: 35000,
+    images: ["assets/images/Móc khóa len cà chua.jpg"],
+    description: "Móc khóa quả cà chua len đỏ rực rỡ, điểm xuyết chiếc lá xanh nhỏ nhắn, mang lại may mắn.",
+    tags: ["crochet", "fruit", "handmade"],
+    stock: 15,
     rating: 4.7,
-    reviews: 25,
-    dateAdded: "2025-05-21",
+    reviews: 9,
+    dateAdded: "2026-06-23",
     featured: false
   },
   {
     id: 3,
-    name: "crochet flower keychain",
+    name: "Móc khóa Chú Cá len tinh nghịch",
+    category: "Animal",
     condition: "Like New",
-    price: 15000,
-    originalPrice: 30000,
-    category: "Cute",
-    images: [
-      "assets/images/crochet flower keychain.jpg"
-    ],
-    description: "Handmade crochet flower keychain. Perfect for adding a touch of charm to your keys.",
-    tags: ["cute", "handmade", "crochet"],
-    stock: 10,
-    rating: 4.8,
-    reviews: 30,
-    dateAdded: "2025-05-22",
+    price: 30000,
+    originalPrice: 45000,
+    images: ["assets/images/Móc khóa len cá.jpg"],
+    description: "Móc khóa chú cá nhỏ được phối màu sắc nổi bật, đường len chắc chắn, không bị xù lông.",
+    tags: ["crochet", "animal", "fish", "handmade"],
+    stock: 8,
+    rating: 4.9,
+    reviews: 11,
+    dateAdded: "2026-06-23",
     featured: true
   },
   {
     id: 4,
-    name: "Doremon Keychain",
-    category: "Cute",
+    name: "Móc khóa Chú Gấu len má hồng",
+    category: "Animal",
     condition: "Like New",
-    price: 25000,
+    price: 35000,
     originalPrice: 50000,
-    images: [
-      "assets/images/Doraemon.jpg"
-    ],
-    description: "Charming Doremon keychain. Perfect for fans of the classic anime series.",
-    tags: ["cute", "anime", "doremon"],
-    stock: 7,
-    rating: 4.6,
-    reviews: 20,
-    dateAdded: "2025-05-23",
-    featured: false
+    images: ["assets/images/Móc khóa len gấu.jpg"],
+    description: "Bé gấu len Amigurumi với đôi má hồng xinh xắn, phụ kiện tuyệt vời cho balo hoặc chìa khóa xe.",
+    tags: ["crochet", "animal", "bear", "cute"],
+    stock: 5,
+    rating: 5.0,
+    reviews: 14,
+    dateAdded: "2026-06-23",
+    featured: true
   },
   {
     id: 5,
-    name: "Acrylic Keychain",
-    category: "Acrylic",
-    condition: "Good",
-    price: 20000,
+    name: "Móc khóa Kem ốc quế len ngọt ngào",
+    category: "Custom",
+    condition: "Like New",
+    price: 25000,
     originalPrice: 40000,
-    images: [
-      "assets/images/Acrylic Keychain.jpg"
-    ],
-    description: "Durable acrylic keychain with a sleek design. Great for everyday use.",
-    tags: ["acrylic", "keychain", "accessory"],
-    stock: 15,
-    rating: 4.5,
-    reviews: 12,
-    dateAdded: "2025-05-24",
+    images: ["assets/images/Móc khoa len kem.jpg"], // Giữ nguyên tên file không dấu của bạn
+    description: "Ly kem ốc quế mát lạnh bằng len, không bao giờ tan chảy, nhìn là muốn ăn ngay!",
+    tags: ["crochet", "handmade", "icecream", "sweet"],
+    stock: 10,
+    rating: 4.6,
+    reviews: 4,
+    dateAdded: "2026-06-23",
+    featured: false
+  },
+  {
+    id: 6,
+    name: "Móc khóa Cây Nấm len nhỏ nhắn",
+    category: "Custom",
+    condition: "Like New",
+    price: 22000,
+    originalPrice: 35000,
+    images: ["assets/images/Móc khóa len nấm.jpg"],
+    description: "Cây nấm len nhỏ xinh độc đáo, phù hợp làm quà tặng cặp đôi hoặc nhóm bạn thân.",
+    tags: ["crochet", "mushroom", "handmade"],
+    stock: 20,
+    rating: 4.8,
+    reviews: 7,
+    dateAdded: "2026-06-13",
+    featured: false
+  },
+  {
+    id: 7,
+    name: "Móc khóa Ngôi sao len may mắn",
+    category: "Custom",
+    condition: "Fair",
+    price: 20000,
+    originalPrice: 30000,
+    images: ["assets/images/Móc khóa len ngôi sao.jpg"],
+    description: "Ngôi sao vàng 5 cánh bằng len mềm mại, mang lại năng lượng tích cực cho mỗi ngày xuống phố.",
+    tags: ["crochet", "star", "handmade", "lucky"],
+    stock: 25,
+    rating: 4.9,
+    reviews: 15,
+    dateAdded: "2026-06-15",
+    featured: true
+  },
+  {
+    id: 8,
+    name: "Móc khóa Quả Táo len đỏ",
+    category: "Fruit",
+    condition: "Like New",
+    price: 25000,
+    originalPrice: 40000,
+    images: ["assets/images/Móc khóa len tóa.jpg"], // Giữ đúng tên file gốc 'tóa.jpg' của bạn tránh lệch link
+    description: "Quả táo len căng mọng, móc thủ công tỉ mỉ từng mũi kim.",
+    tags: ["crochet", "fruit", "apple"],
+    stock: 9,
+    rating: 4.7,
+    reviews: 8,
+    dateAdded: "2026-06-16",
+    featured: false
+  },
+  {
+    id: 9,
+    name: "Móc khóa Chú Vịt len ngốc nghếch",
+    category: "Animal",
+    condition: "Good",
+    price: 32000,
+    originalPrice: 48000,
+    images: ["assets/images/Móc khóa len vịt.jpg"],
+    description: "Chú vịt len với chiếc mỏ mập mạp siêu tấu hài, bảo đảm nhìn là bật cười.",
+    tags: ["crochet", "animal", "duck", "cute"],
+    stock: 7,
+    rating: 5.0,
+    reviews: 19,
+    dateAdded: "2026-06-17",
     featured: true
   }
 ];
+
 // Categories derived from data
 const CATEGORIES = ["All", ...new Set(PRODUCTS.map(p => p.category))];
 
@@ -113,9 +168,6 @@ function getRelatedProducts(product, limit = 4) {
     .filter(p => p.category === product.category && p.id !== product.id)
     .slice(0, limit);
 }
-
-// NOTE: formatPrice() is defined in config.js and uses CONFIG.currency settings.
-// Do not redefine it here.
 
 // Helper: render stars
 function renderStars(rating) {

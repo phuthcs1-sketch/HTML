@@ -8,8 +8,8 @@ const CONFIG = {
   // ---- Site Identity ----
   site: {
     name:        "Key2hand",
-    tagline:     "Second-Hand Keychains, Great Prices",
-    description: "Handpicked, authentic second-hand keychains — anime, vintage, cute and custom. Each piece is carefully checked and honestly described.",
+    tagline:     "Handmade Crochet Keychains, Crafted with Love",
+    description: "Beautiful, hand-stitched crochet keychains — amigurumi animals, flowers, cute fruits, and custom designs. Each piece is meticulously made with premium yarn.",
     logo:        "assets/images/logo.png",
     url:         "https://key2hand.com",        // update when you deploy
     language:    "en",
@@ -32,7 +32,6 @@ const CONFIG = {
   currency: {
     locale:    "vi-VN",     // used by toLocaleString()
     suffix:    " đ",        // appended after formatted number
-    // To switch to USD: locale: "en-US", prefix: "$", suffix: ""
     prefix:    "",
   },
 
@@ -45,23 +44,20 @@ const CONFIG = {
 
   // ---- Stats shown on homepage hero ----
   stats: {
-    keychains:   "30+",
-    happyBuyers: "500+",
-    avgRating:   "4.8★",
+    keychains:   "50+",
+    happyBuyers: "300+",
+    avgRating:   "4.9★",
   },
 
-  // ---- Categories (order, emoji, label) ----
+  // ---- Categories (Updated for Crochet Shop) ----
   categories: [
-    { name: "Anime",   emoji: "⛩️" },
-    { name: "Cute",    emoji: "🧸" },
-    { name: "Vintage", emoji: "🕰️" },
-    { name: "Metal",   emoji: "⚙️" },
-    { name: "Custom",  emoji: "🎨" },
-    { name: "Acrylic", emoji: "💎" },
+    { name: "Flower",    emoji: "🌸" },
+    { name: "Animal",    emoji: "🧸" },
+    { name: "Fruit",     emoji: "🍓" },
+    { name: "Custom",    emoji: "🎨" },
   ],
 
   // ---- Promo Codes ----
-  // Each code: { discount: 0–100 (%), label: string shown to user }
   promoCodes: {
     "KEY10":    { discount: 10, label: "10% off your order" },
     "WELCOME":  { discount: 15, label: "15% welcome discount" },
@@ -77,7 +73,6 @@ const CONFIG = {
 
   // ---- Auth (mock) ----
   auth: {
-    // Built-in demo account for testing — change or remove before going live
     demoEmail:    "demo@key2hand.com",
     demoPassword: "demo123",
     demoName:     "Demo User",
@@ -86,25 +81,24 @@ const CONFIG = {
 
   // ---- SEO / Meta ----
   seo: {
-    titleSuffix:  " – Key2hand",         // appended to each page title
-    ogImage:      "assets/og-image.jpg", // open graph share image
-    keywords:     "Key2hand, second hand keychain, used keychain, anime keychain, vintage keychain, Da Nang, Vietnam",
+    titleSuffix:  " – Key2hand Crochet", 
+    ogImage:      "assets/og-image.jpg", 
+    keywords:     "Key2hand, crochet keychain, handmade keychain, amigurumi, knitted keychain, moc khoa len, Da Nang, Vietnam",
   },
 
   // ---- Footer ----
   footer: {
-    copyrightYear: 2025,
-    tagline:       "All items are second-hand — conditions accurately described.",
+    copyrightYear: 2026,
+    tagline:       "All items are lovingly handmade — quality accurately described.",
   },
 
   // ---- Feature Flags ----
-  // Set false to hide a feature without deleting code
   features: {
-    wishlist:     true,   // heart / wishlist button on product cards
-    reviews:      true,   // show star ratings and review counts
-    stockBadge:   true,   // "Only X left!" badge on cards
-    freeShipping: true,   // free-shipping progress bar in cart
-    promoCodes:   true,   // promo code input in cart
+    wishlist:     true,   
+    reviews:      true,   
+    stockBadge:   true,   
+    freeShipping: true,   
+    promoCodes:   true,   
   },
 };
 
@@ -112,36 +106,22 @@ const CONFIG = {
 // Derived helpers — do not edit below here
 // =========================================
 
-/**
- * Format a number as a price string using CONFIG.currency settings.
- * Replaces the plain formatPrice() in data.js.
- */
 function formatPrice(amount) {
   const formatted = amount.toLocaleString(CONFIG.currency.locale);
   return CONFIG.currency.prefix + formatted + CONFIG.currency.suffix;
 }
 
-/**
- * Return the emoji for a given category name.
- */
 function getCategoryEmoji(name) {
   const cat = CONFIG.categories.find(c => c.name === name);
-  return cat ? cat.emoji : "🗝️";
+  return cat ? cat.emoji : "🧶";
 }
 
-/**
- * Validate a promo code. Returns { valid, discount, label } or { valid: false }.
- */
 function validatePromoCode(code) {
   const entry = CONFIG.promoCodes[code.toUpperCase()];
   if (!entry) return { valid: false };
   return { valid: true, ...entry };
 }
 
-/**
- * Build a full page <title> string.
- * Usage: setPageTitle("Shop") → "Shop – Key2hand"
- */
 function setPageTitle(pageTitle) {
   document.title = pageTitle
     ? pageTitle + CONFIG.seo.titleSuffix

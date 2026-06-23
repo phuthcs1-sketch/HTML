@@ -295,7 +295,7 @@
     <div class="testimonials-grid">
       <div class="testimonial-card reveal delay-1">
         <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Got a Totoro keychain in absolutely perfect condition. Packed super carefully and arrived looking brand new. Already ordering more!"</p>
+        <p class="testimonial-text">"Mình vừa mua chiếc móc khóa hình gấu đan móc dễ thương này và mình cực kỳ thích nó! Các mũi đan rất tỉ mỉ, và nó thì mềm mại vô cùng. Được đóng gói rất đẹp mắt kèm theo một lời nhắn viết tay ngọt ngào."</p>
         <div class="testimonial-author">
           <img class="testimonial-avatar" src="https://picsum.photos/seed/user1/80/80" alt="Linh N.">
           <div>
@@ -304,9 +304,10 @@
           </div>
         </div>
       </div>
+      
       <div class="testimonial-card reveal delay-2">
         <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Found a vintage brass compass I'd been hunting for months. Condition was exactly as described — minor scratch but adds character!"</p>
+        <p class="testimonial-text">"Tôi đã đặt làm một chiếc móc khóa hình ổ bánh mì theo yêu cầu riêng cho ba lô của bạn thân. Chi tiết rất tuyệt vời, màu sắc rực rỡ, và chủ cửa hàng rất nhiệt tình giúp đỡ những yêu cầu tùy chỉnh của tôi!"</p>
         <div class="testimonial-author">
           <img class="testimonial-avatar" src="https://picsum.photos/seed/user2/80/80" alt="Minh T.">
           <div>
@@ -315,9 +316,10 @@
           </div>
         </div>
       </div>
+      
       <div class="testimonial-card reveal delay-3">
-        <div class="stars">★★★★☆</div>
-        <p class="testimonial-text">"Great selection of cute stuff. The strawberry resin charm is even cuter in person! Will definitely buy again. Shipping was fast too."</p>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Móc khóa hình quả dâu tây và con vịt đan móc này ngoài đời còn dễ thương hơn nữa! Rất nhẹ, kích thước hoàn hảo cho chìa khóa của tôi, và giao hàng cũng siêu nhanh. Chắc chắn sẽ mua lại!"</p>
         <div class="testimonial-author">
           <img class="testimonial-avatar" src="https://picsum.photos/seed/user3/80/80" alt="An P.">
           <div>
@@ -397,31 +399,19 @@
 <script src="js/auth.js"></script>
 <script src="js/main.js"></script>
 <script>
-  const CATEGORY_META = {
-    'Anime':   { emoji: '⛩️' },
-    'Cute':    { emoji: '🧸' },
-    'Vintage': { emoji: '🕰️' },
-    'Metal':   { emoji: '⚙️' },
-    'Custom':  { emoji: '🎨' },
-    'Acrylic': { emoji: '💎' },
-  };
-
+  // Tự động đếm số lượng sản phẩm theo từng danh mục
   const counts = {};
   PRODUCTS.forEach(p => { counts[p.category] = (counts[p.category] || 0) + 1; });
 
+  // Render danh mục động hoàn toàn dựa vào CONFIG.categories
   document.getElementById('categories-grid').innerHTML =
-    Object.entries(CATEGORY_META).map(([name, meta]) => `
-      <a href="shop.html?cat=${name}" class="category-card reveal">
-        <div class="cat-emoji">${meta.emoji}</div>
-        <span class="cat-name">${name}</span>
-        <span class="cat-count">${counts[name] || 0} items</span>
+    CONFIG.categories.map(cat => `
+      <a href="shop.html?cat=${cat.name}" class="category-card reveal">
+        <div class="category-emoji">${cat.emoji}</div>
+        <h3 class="category-name">${cat.name}</h3>
+        <span class="category-count">${counts[cat.name] || 0} items</span>
       </a>
     `).join('');
-
-  document.getElementById('featured-grid').innerHTML =
-    getFeaturedProducts().map(renderProductCard).join('');
-
-  setTimeout(initScrollReveal, 50);
 </script>
 </body>
 </html>

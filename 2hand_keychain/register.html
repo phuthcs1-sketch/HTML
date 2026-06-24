@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Create a new Key2hand account.">
-  <title>Register – Key2hand</title>
+  <meta name="description" content="Tạo tài khoản Key2hand mới.">
+  <title>Đăng ký – Key2hand</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
@@ -103,7 +103,7 @@
 
     .form-error.visible { display: block; }
 
-    /* Password strength indicator */
+    /* Thanh đánh giá độ mạnh mật khẩu */
     .password-strength {
       margin-top: 6px;
       display: none;
@@ -181,7 +181,7 @@
     .auth-topbar a { font-size: 0.88rem; color: var(--text-muted); }
     .auth-topbar a:hover { color: var(--primary); }
 
-    /* Name row */
+    /* Hàng nhập họ tên */
     .name-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -195,7 +195,7 @@
 
 <div class="auth-topbar">
   <a href="index.html"><img src="assets/images/logo.png" alt="Key2hand" class="nav-logo-img"> <strong style="color:var(--primary)">Key2hand</strong></a>
-  <a href="index.html">← Back to Home</a>
+  <a href="index.html">← Quay lại Trang chủ</a>
 </div>
 
 <div class="auth-page">
@@ -205,70 +205,69 @@
       <a href="index.html"><img src="assets/images/logo.png" alt="Key2hand" class="nav-logo-img"> Key2hand</a>
     </div>
 
-    <h1 class="auth-title">Create an account</h1>
-    <p class="auth-subtitle">Join Key2hand and start shopping</p>
+    <h1 class="auth-title">Tạo tài khoản</h1>
+    <p class="auth-subtitle">Tham gia Key2hand và bắt đầu mua sắm ngay</p>
 
-    <!-- Alert -->
     <div class="alert alert-error" id="register-error"></div>
     <div class="alert alert-success" id="register-success">
-      ✅ Account created! Redirecting to login…
+      ✅ Đăng ký thành công! Đang chuyển hướng đến trang đăng nhập…
     </div>
 
     <form id="register-form" novalidate>
 
       <div class="name-row">
         <div class="form-group">
-          <label class="form-label" for="first-name">First name</label>
-          <input class="form-input" type="text" id="first-name" placeholder="Phu" required>
-          <div class="form-error" id="first-name-error">Required.</div>
+          <label class="form-label" for="first-name">Tên</label>
+          <input class="form-input" type="text" id="first-name" placeholder="Phú" required>
+          <div class="form-error" id="first-name-error">Vui lòng điền thông tin.</div>
         </div>
         <div class="form-group">
-          <label class="form-label" for="last-name">Last name</label>
-          <input class="form-input" type="text" id="last-name" placeholder="Nguyen" required>
-          <div class="form-error" id="last-name-error">Required.</div>
+          <label class="form-label" for="last-name">Họ</label>
+          <input class="form-input" type="text" id="last-name" placeholder="Nguyễn" required>
+          <div class="form-error" id="last-name-error">Vui lòng điền thông tin.</div>
         </div>
       </div>
 
       <div class="form-group">
         <label class="form-label" for="email">Email</label>
-        <input class="form-input" type="email" id="email" placeholder="you@example.com" autocomplete="email" required>
-        <div class="form-error" id="email-error">Please enter a valid email.</div>
+        <input class="form-input" type="email" id="email" placeholder="ten_cua_ban@vienduong.com" autocomplete="email" required>
+        <div class="form-error" id="email-error">Vui lòng nhập một địa chỉ email hợp lệ.</div>
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="phone">Phone number <span style="color:var(--text-light);font-weight:400">(optional)</span></label>
+        <label class="form-label" for="phone">Số điện thoại <span style="color:var(--text-light);font-weight:400">(không bắt buộc)</span></label>
         <input class="form-input" type="tel" id="phone" placeholder="09x xxx xxxx">
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="password">Password</label>
-        <input class="form-input" type="password" id="password" placeholder="Min. 6 characters" autocomplete="new-password" required>
+        <label class="form-label" for="password">Mật khẩu</label>
+        <input class="form-input" type="password" id="password" placeholder="Tối thiểu 6 ký tự" autocomplete="new-password" required>
         <div class="password-strength" id="strength-wrap">
           <div class="strength-bar"><div class="strength-fill" id="strength-fill"></div></div>
           <span class="strength-text" id="strength-text"></span>
         </div>
-        <div class="form-error" id="password-error">Password must be at least 6 characters.</div>
+        <div class="form-error" id="password-error">Mật khẩu phải chứa ít nhất 6 ký tự.</div>
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="confirm-password">Confirm password</label>
-        <input class="form-input" type="password" id="confirm-password" placeholder="Repeat your password" autocomplete="new-password" required>
-        <div class="form-error" id="confirm-error">Passwords do not match.</div>
+        <label class="form-label" for="confirm-password">Xác nhận mật khẩu</label>
+        <input class="form-input" type="password" id="confirm-password" placeholder="Nhập lại mật khẩu" autocomplete="new-password" required>
+        <div class="form-error" id="confirm-error">Mật khẩu xác nhận không trùng khớp.</div>
       </div>
 
       <label class="form-terms" id="terms-label">
         <input type="checkbox" id="terms">
-        I agree to the <a href="#" class="form-link" onclick="return false">Terms of Service</a> and <a href="#" class="form-link" onclick="return false">Privacy Policy</a>.
+        Tôi đồng ý với <a href="#" class="form-link" onclick="return false">Điều khoản dịch vụ</a> và <a href="#" class="form-link" onclick="return false">Chính sách bảo mật</a>.
       </label>
-      <div class="form-error" id="terms-error" style="margin-top:-10px;margin-bottom:14px">You must agree to continue.</div>
+      <div class="form-error" id="terms-error" style="margin-top:-10px;margin-bottom:14px">Bạn phải đồng ý với các điều khoản để tiếp tục.</div>
 
       <button type="submit" class="btn btn-primary btn-submit" id="register-btn">
-        Create Account
+        Tạo tài khoản
       </button>
     </form>
 
     <div class="auth-footer">
-      Already have an account? <a href="login.html" class="form-link">Login</a>
+      Bạn đã có tài khoản? <a href="login.html" class="form-link">Đăng nhập ngay</a>
     </div>
   </div>
 </div>
@@ -282,7 +281,7 @@
 
   const form = document.getElementById('register-form');
 
-  // ---- Password strength ----
+  // ---- Đánh giá độ mạnh mật khẩu ----
   const passwordInput = document.getElementById('password');
   const strengthWrap  = document.getElementById('strength-wrap');
   const strengthFill  = document.getElementById('strength-fill');
@@ -301,11 +300,11 @@
     if (/[^A-Za-z0-9]/.test(val)) score++;
 
     const levels = [
-      { label: 'Very weak', color: '#DC2626', width: '20%' },
-      { label: 'Weak',      color: '#EA580C', width: '40%' },
-      { label: 'Fair',      color: '#D97706', width: '60%' },
-      { label: 'Good',      color: '#16A34A', width: '80%' },
-      { label: 'Strong',    color: '#15803D', width: '100%' },
+      { label: 'Rất yếu',  color: '#DC2626', width: '20%' },
+      { label: 'Yếu',      color: '#EA580C', width: '40%' },
+      { label: 'Trung bình', color: '#D97706', width: '60%' },
+      { label: 'Tốt',      color: '#16A34A', width: '80%' },
+      { label: 'Rất mạnh',  color: '#15803D', width: '100%' },
     ];
     const lvl = levels[Math.min(score - 1, 4)] || levels[0];
     strengthFill.style.width = lvl.width;
@@ -314,7 +313,7 @@
     strengthText.style.color = lvl.color;
   });
 
-  // ---- Form helpers ----
+  // ---- Trợ giúp xử lý form ----
   function showError(id, inputId) {
     document.getElementById(id).classList.add('visible');
     if (inputId) document.getElementById(inputId).classList.add('error');
@@ -331,7 +330,7 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
   }
 
-  // ---- Submit ----
+  // ---- Xử lý gửi biểu mẫu ----
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     clearErrors();
@@ -354,23 +353,23 @@
 
     if (!valid) return;
 
-    // Check duplicate email
+    // Kiểm tra trùng lặp email
     const existing = JSON.parse(localStorage.getItem('key2hand_registered') || '[]');
     const demoUsers = [{ email: 'demo@key2hand.com' }];
     if ([...demoUsers, ...existing].some(u => u.email === email)) {
       const errEl = document.getElementById('register-error');
-      errEl.textContent = 'An account with this email already exists.';
+      errEl.textContent = 'Một tài khoản sử dụng email này đã tồn tại.';
       errEl.classList.add('visible');
       document.getElementById('email').classList.add('error');
       return;
     }
 
-    // Save new user
+    // Lưu thông tin người dùng mới
     const newUser = { name: `${firstName} ${lastName}`, email, password, phone: document.getElementById('phone').value.trim() };
     existing.push(newUser);
     localStorage.setItem('key2hand_registered', JSON.stringify(existing));
 
-    // Show success and redirect
+    // Hiển thị thông báo thành công và chuyển hướng
     document.getElementById('register-success').classList.add('visible');
     document.getElementById('register-btn').disabled = true;
 

@@ -103,7 +103,7 @@ const PRODUCTS = [
     id: 7,
     name: "Móc khóa Ngôi sao len may mắn",
     category: "Custom",
-    condition: "Fair",
+    condition: "Like New",
     price: 20000,
     originalPrice: 30000,
     images: ["assets/images/Móc khóa len ngôi sao.jpg"],

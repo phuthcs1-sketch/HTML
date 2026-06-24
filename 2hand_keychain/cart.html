@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Shopping cart – Key2hand keychains.">
-  <title>Cart – Key2hand</title>
+  <meta name="description" content="Giỏ hàng – Móc khóa Key2hand.">
+  <title>Giỏ hàng – Key2hand</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
@@ -71,14 +71,14 @@
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img src="assets/images/logo.png" alt="Key2hand" class="nav-logo-img"> Key2hand</a>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="about.html">About</a>
+      <a href="index.html">Trang chủ</a>
+      <a href="shop.html">Cửa hàng</a>
+      <a href="about.html">Về chúng tôi</a>
     </div>
     <div class="nav-actions">
       <div id="auth-nav" style="display:flex;align-items:center;gap:8px"></div>
-      <a href="cart.html" class="nav-cart-btn" aria-label="Cart">
-        🛒 Cart<span class="cart-badge" id="cart-badge">0</span>
+      <a href="cart.html" class="nav-cart-btn" aria-label="Giỏ hàng">
+        🛒 Giỏ hàng<span class="cart-badge" id="cart-badge">0</span>
       </a>
       <button class="nav-menu-btn" id="menu-btn" aria-label="Menu">☰</button>
     </div>
@@ -86,83 +86,79 @@
 </nav>
 <div class="nav-drawer-overlay" id="drawer-overlay"></div>
 <div class="nav-drawer" id="nav-drawer">
-  <a href="index.html">🏠 Home</a>
-  <a href="shop.html">🛍️ Shop</a>
-  <a href="about.html">About</a>
-  <a href="cart.html">🛒 Cart</a>
+  <a href="index.html">🏠 Trang chủ</a>
+  <a href="shop.html">🛍️ Cửa hàng</a>
+  <a href="about.html">Về chúng tôi</a>
+  <a href="cart.html">🛒 Giỏ hàng</a>
 </div>
 
 <div class="page-header">
   <div class="container">
     <div class="breadcrumb">
-      <a href="index.html">Home</a><span class="sep">/</span><span>Cart</span>
+      <a href="index.html">Trang chủ</a><span class="sep">/</span><span>Giỏ hàng</span>
     </div>
-    <h1>Shopping Cart</h1>
+    <h1>Giỏ hàng</h1>
   </div>
 </div>
 
 <section class="section" style="padding-top:32px">
   <div class="container">
 
-    <!-- Empty -->
     <div id="cart-empty" style="display:none">
       <div class="empty-state">
         <div class="empty-state-icon">🛒</div>
-        <h3>Your cart is empty</h3>
-        <p>You haven't added any keychains yet.</p>
-        <a href="shop.html" class="btn btn-primary" style="margin-top:20px;display:inline-flex">Browse Shop</a>
+        <h3>Giỏ hàng của bạn đang trống</h3>
+        <p>Bạn chưa thêm chiếc móc khóa nào vào giỏ.</p>
+        <a href="shop.html" class="btn btn-primary" style="margin-top:20px;display:inline-flex">Xem cửa hàng</a>
       </div>
     </div>
 
-    <!-- Filled -->
     <div id="cart-filled" style="display:none">
       <div class="cart-layout">
 
-        <!-- Items -->
         <div class="cart-items-card">
           <div class="cart-header">
-            <h3 id="cart-count-label">0 Items</h3>
-            <button class="btn btn-ghost btn-sm" id="clear-cart-btn">Clear All</button>
+            <h3 id="cart-count-label">0 sản phẩm</h3>
+            <button class="btn btn-ghost btn-sm" id="clear-cart-btn">Xóa tất cả</button>
           </div>
           <div id="cart-items-list"></div>
         </div>
 
-        <!-- Summary -->
         <div class="order-summary">
-          <h3 style="margin-bottom:18px">Order Summary</h3>
+          <h3 style="margin-bottom:18px">Tóm tắt đơn hàng</h3>
 
           <div class="shipping-bar" id="shipping-bar">
-            <div id="shipping-bar-text">Add more for free shipping!</div>
+            <div id="shipping-bar-text">Mua thêm để được miễn phí vận chuyển!</div>
             <div class="bar-track">
               <div class="bar-fill" id="shipping-bar-fill" style="width:0%"></div>
             </div>
           </div>
 
           <div class="summary-row">
-            <span class="label">Subtotal</span>
+            <span class="label">Tạm tính</span>
             <span id="summary-subtotal">0 đ</span>
           </div>
           <div class="summary-row">
-            <span class="label">Shipping</span>
+            <span class="label">Phí vận chuyển</span>
             <span id="summary-shipping">30.000 đ</span>
           </div>
 
           <div class="promo-row">
-            <input class="promo-input" type="text" id="promo-input" placeholder="Promo code">
-            <button class="btn btn-ghost btn-sm" id="promo-btn">Apply</button>
+            <input class="promo-input" type="text" id="promo-input" placeholder="Mã giảm giá">
+            <button class="btn btn-ghost btn-sm" id="promo-btn">Áp dụng</button>
           </div>
 
           <div class="summary-row summary-total">
-            <span class="label">Total</span>
+            <span class="label">Tổng cộng</span>
             <span id="summary-total">0 đ</span>
           </div>
 
           <button class="btn btn-primary" style="width:100%;margin-top:16px;padding:13px" id="checkout-btn">
-            Checkout →
+            Thanh toán →
           </button>
 
           <p style="font-size:0.75rem;text-align:center;margin-top:10px;color:var(--text-light)">
-            Demo only — no real payment processed.
+            Bản demo — không thực hiện thanh toán thực tế.
           </p>
         </div>
       </div>
@@ -170,16 +166,15 @@
   </div>
 </section>
 
-<!-- Success Modal -->
 <div class="modal-overlay" id="success-modal">
   <div class="modal">
     <div class="modal-icon">✓</div>
-    <h2 style="margin-bottom:10px">Order Placed!</h2>
-    <p style="margin-bottom:6px">Thank you for your purchase!</p>
-    <p style="font-size:0.86rem;margin-bottom:24px">We'll contact you via Zalo to confirm your order and arrange delivery.</p>
+    <h2 style="margin-bottom:10px">Đặt hàng thành công!</h2>
+    <p style="margin-bottom:6px">Cảm ơn bạn đã mua sắm tại cửa hàng!</p>
+    <p style="font-size:0.86rem;margin-bottom:24px">Chúng tôi sẽ liên hệ với bạn qua Zalo để xác nhận đơn hàng và sắp xếp giao hàng.</p>
     <div style="display:flex;gap:10px">
-      <a href="shop.html" class="btn btn-primary" style="flex:1">Shop More</a>
-      <a href="index.html" class="btn btn-secondary" style="flex:1">Home</a>
+      <a href="shop.html" class="btn btn-primary" style="flex:1">Mua thêm</a>
+      <a href="index.html" class="btn btn-secondary" style="flex:1">Trang chủ</a>
     </div>
   </div>
 </div>
@@ -188,7 +183,7 @@
   <div class="container">
     <div class="footer-bottom" style="border-top:none;padding-top:0">
       <span>© 2025 Key2hand.</span>
-      <a href="shop.html" style="color:var(--primary)">← Continue Shopping</a>
+      <a href="shop.html" style="color:var(--primary)">← Tiếp tục mua sắm</a>
     </div>
   </div>
 </footer>
@@ -217,7 +212,7 @@
     filledEl.style.display = 'block';
 
     const totalItems = items.reduce((s, i) => s + i.qty, 0);
-    document.getElementById('cart-count-label').textContent = `${totalItems} Item${totalItems !== 1 ? 's' : ''}`;
+    document.getElementById('cart-count-label').textContent = `${totalItems} sản phẩm`;
 
     document.getElementById('cart-items-list').innerHTML = items.map(item => `
       <div class="cart-item">
@@ -248,24 +243,24 @@
     const total = subtotal + shipping;
 
     document.getElementById('summary-subtotal').textContent = formatPrice(subtotal);
-    document.getElementById('summary-shipping').textContent = shipping === 0 ? 'FREE 🎉' : formatPrice(shipping);
+    document.getElementById('summary-shipping').textContent = shipping === 0 ? 'MIỄN PHÍ 🎉' : formatPrice(shipping);
     document.getElementById('summary-total').textContent = formatPrice(total);
 
     const pct = Math.min((subtotal / SHIPPING_THRESHOLD) * 100, 100);
     document.getElementById('shipping-bar-fill').style.width = pct + '%';
     if (subtotal >= SHIPPING_THRESHOLD) {
-      document.getElementById('shipping-bar-text').textContent = '🎉 Free shipping unlocked!';
+      document.getElementById('shipping-bar-text').textContent = '🎉 Đã đủ điều kiện miễn phí vận chuyển!';
     } else {
       const rem = SHIPPING_THRESHOLD - subtotal;
-      document.getElementById('shipping-bar-text').textContent = `Add ${formatPrice(rem)} more for free shipping`;
+      document.getElementById('shipping-bar-text').textContent = `Mua thêm ${formatPrice(rem)} để được miễn phí vận chuyển`;
     }
   }
 
   function doUpdateQty(productId, delta) { updateCartQty(productId, delta); renderCartPage(); }
-  function doRemove(productId) { removeFromCart(productId); showToast('Item removed.', 'success'); renderCartPage(); }
+  function doRemove(productId) { removeFromCart(productId); showToast('Đã xóa sản phẩm.', 'success'); renderCartPage(); }
 
   document.getElementById('clear-cart-btn').addEventListener('click', () => {
-    if (confirm('Remove all items?')) { clearCart(); renderCartPage(); }
+    if (confirm('Xóa tất cả sản phẩm khỏi giỏ hàng?')) { clearCart(); renderCartPage(); }
   });
 
   document.getElementById('promo-btn').addEventListener('click', () => {
@@ -274,8 +269,8 @@
     const result = validatePromoCode(raw);
     showToast(
       result.valid
-        ? `🎉 ${result.label} applied! (Demo)`
-        : '❌ Invalid promo code.',
+        ? `🎉 Đã áp dụng ${result.label}! (Demo)`
+        : '❌ Mã giảm giá không hợp lệ.',
       result.valid ? 'success' : 'error'
     );
   });

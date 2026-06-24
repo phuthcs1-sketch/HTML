@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Key2hand – Affordable second-hand keychains. Anime, vintage, cute and custom charms.">
-  <title>Key2hand – Second Hand Keychains</title>
+  <meta name="description" content="Key2hand – Móc khóa len handmade đan tay tỉ mỉ. Thế giới hoa quả, thú nhỏ đáng yêu và đồ đặt làm theo yêu cầu.">
+  <title>Key2hand – Móc Khóa Len Handmade Thủ Công</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
@@ -161,136 +161,129 @@
 </head>
 <body>
 
-<!-- Navbar -->
 <nav class="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
       <img src="assets/images/logo.png" alt="Key2hand" class="nav-logo-img"> Key2hand
     </a>
     <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="about.html">About</a>
+      <a href="index.html" class="active">Trang chủ</a>
+      <a href="shop.html">Cửa hàng</a>
+      <a href="about.html">Giới thiệu</a>
     </div>
     <div class="nav-actions">
       <div id="auth-nav" style="display:flex;align-items:center;gap:8px"></div>
-      <a href="cart.html" class="nav-cart-btn" id="nav-cart-btn" aria-label="Cart">
-        🛒 Cart
+      <a href="cart.html" class="nav-cart-btn" id="nav-cart-btn" aria-label="Giỏ hàng">
+        🛒 Giỏ hàng
         <span class="cart-badge" id="cart-badge">0</span>
       </a>
-      <button class="nav-menu-btn" id="menu-btn" aria-label="Open menu">☰</button>
+      <button class="nav-menu-btn" id="menu-btn" aria-label="Mở menu">☰</button>
     </div>
   </div>
 </nav>
 
 <div class="nav-drawer-overlay" id="drawer-overlay"></div>
 <div class="nav-drawer" id="nav-drawer">
-  <a href="index.html">🏠 Home</a>
-  <a href="shop.html">🛍️ Shop</a>
-  <a href="about.html">About</a>
-  <a href="cart.html">🛒 Cart</a>
+  <a href="index.html">🏠 Trang chủ</a>
+  <a href="shop.html">🛍️ Cửa hàng</a>
+  <a href="about.html">Giới thiệu</a>
+  <a href="cart.html">🛒 Giỏ hàng</a>
 </div>
 
-<!-- Hero -->
 <section class="hero">
   <div class="container">
     <div class="hero-inner">
       <div>
-        <div class="hero-tag anim-fade-up">🗝️ 30+ Keychains In Stock</div>
+        <div class="hero-tag anim-fade-up">🗝️ Hơn 30+ Mẫu Có Sẵn</div>
         <h1 class="hero-title anim-fade-up delay-100">
-          Second-Hand Keychains,<br>
-          <span>Great Prices</span>
+          Móc Khóa Len,<br>
+          <span>Giá Hạt Dẻ</span>
         </h1>
         <p class="hero-desc anim-fade-up delay-200">
-          Handpicked, authentic second-hand keychains — anime, vintage, cute and custom.
-          Each piece is carefully checked and honestly described.
+          "Móc khóa len handmade tự tay đan móc — thế giới hoa cỏ, thú nhỏ, trái cây xinh xắn và đồ đặt làm riêng. Mỗi sản phẩm đều được hoàn thiện tỉ mỉ từ những sợi len mềm mịn nhất."
         </p>
         <div class="hero-btns anim-fade-up delay-300">
-          <a href="shop.html" class="btn btn-primary btn-lg">Shop Now →</a>
-          <a href="about.html" class="btn btn-secondary btn-lg">Our Story</a>
+          <a href="shop.html" class="btn btn-primary btn-lg">Mua ngay →</a>
+          <a href="about.html" class="btn btn-secondary btn-lg">Về chúng tôi</a>
         </div>
         <div class="hero-stats anim-fade-up delay-300">
           <div class="stat-item">
             <div class="value">30+</div>
-            <div class="label">Keychains</div>
+            <div class="label">Mẫu móc khóa</div>
           </div>
           <div class="stat-item">
             <div class="value">500+</div>
-            <div class="label">Happy Buyers</div>
+            <div class="label">Khách hàng hài lòng</div>
           </div>
           <div class="stat-item">
             <div class="value">4.8★</div>
-            <div class="label">Avg. Rating</div>
+            <div class="label">Đánh giá trung bình</div>
           </div>
         </div>
       </div>
       <div class="hero-image">
-        <img src="https://picsum.photos/seed/hero-main/600/600" alt="Keychain collection">
+        <img src="https://picsum.photos/seed/hero-main/600/600" alt="Bộ sưu tập móc khóa len">
       </div>
     </div>
   </div>
 </section>
 
-<!-- Categories -->
 <section class="section" style="background:var(--bg)">
   <div class="container">
     <div class="section-header reveal">
-      <h2>Shop by Category</h2>
-      <p>Find the style you love</p>
+      <h2>Mua sắm theo danh mục</h2>
+      <p>Tìm phong cách xinh xắn mà bạn yêu thích</p>
     </div>
     <div class="categories-grid" id="categories-grid"></div>
   </div>
 </section>
 
-<!-- Featured -->
 <section class="section" style="background:var(--white)">
   <div class="container">
     <div class="section-header reveal" style="display:flex;justify-content:space-between;align-items:flex-end">
       <div>
-        <h2>Featured Picks</h2>
-        <p>Hand-selected favourites — grab them before they're gone</p>
+        <h2>Sản phẩm nổi bật</h2>
+        <p>Những mẫu móc khóa được yêu thích nhất — nhanh tay sở hữu ngay kẻo lỡ</p>
       </div>
-      <a href="shop.html" class="btn btn-secondary" style="flex-shrink:0">View All →</a>
+      <a href="shop.html" class="btn btn-secondary" style="flex-shrink:0">Xem tất cả →</a>
     </div>
     <div class="products-grid" id="featured-grid"></div>
   </div>
 </section>
 
-<!-- Trust -->
 <section class="section" style="background:var(--bg)">
   <div class="container">
     <div class="trust-grid">
       <div class="trust-badge reveal delay-1">
         <div class="trust-icon" style="background:#DCFCE7;color:var(--green)">🔍</div>
         <div>
-          <h4>Carefully Inspected</h4>
-          <p style="font-size:0.85rem;margin-top:4px">Every item is checked for quality. Condition is accurately described.</p>
+          <h4>Hoàn thiện tỉ mỉ</h4>
+          <p style="font-size:0.85rem;margin-top:4px">Từng sản phẩm đều được móc tay thủ công kỹ lưỡng, đảm bảo len đều mũi, bền đẹp và đúng như mô tả.</p>
         </div>
       </div>
       <div class="trust-badge reveal delay-2">
         <div class="trust-icon" style="background:var(--primary-light);color:var(--primary)">💰</div>
         <div>
-          <h4>Affordable Prices</h4>
-          <p style="font-size:0.85rem;margin-top:4px">Save 40–70% compared to retail. Real value for your money.</p>
+          <h4>Giá cả hạt dẻ</h4>
+          <p style="font-size:0.85rem;margin-top:4px">Mức giá cực kỳ phải chăng và hợp túi tiền, đặc biệt phù hợp cho các bạn học sinh, sinh viên.</p>
         </div>
       </div>
       <div class="trust-badge reveal delay-3">
         <div class="trust-icon" style="background:#DBEAFE;color:#2563EB">📦</div>
         <div>
-          <h4>Safe Packaging</h4>
-          <p style="font-size:0.85rem;margin-top:4px">Bubble-wrapped and shipped in sturdy boxes so items arrive perfect.</p>
+          <h4>Đóng gói xinh xắn</h4>
+          <p style="font-size:0.85rem;margin-top:4px">Mỗi chiếc móc khóa đều được đóng gói chỉn chu trong hộp quà dễ thương kèm thư cảm ơn gửi đến bạn.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Testimonials -->
 <section class="section" style="background:var(--white)">
   <div class="container">
     <div class="section-header reveal">
-      <h2>What Customers Say</h2>
-      <p>Real reviews from happy buyers</p>
+      <h2>Khách hàng nói gì về chúng tôi</h2>
+      <p>Những đánh giá chân thực từ những người mua thân thương</p>
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card reveal delay-1">
@@ -300,19 +293,19 @@
           <img class="testimonial-avatar" src="https://picsum.photos/seed/user1/80/80" alt="Linh N.">
           <div>
             <div class="testimonial-name">Linh Nguyen</div>
-            <div style="font-size:0.75rem;color:var(--text-light)">Da Nang City</div>
+            <div style="font-size:0.75rem;color:var(--text-light)">Đà Nẵng</div>
           </div>
         </div>
       </div>
       
       <div class="testimonial-card reveal delay-2">
         <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Tôi đã đặt làm một chiếc móc khóa hình ổ bánh mì theo yêu cầu riêng cho ba lô của bạn thân. Chi tiết rất tuyệt vời, màu sắc rực rỡ, và chủ cửa hàng rất nhiệt tình giúp đỡ những yêu cầu tùy chỉnh của tôi!"</p>
+        <p class="testimonial-text">"Tôi đã đặt làm một chiếc móc khóa hình ổ bánh mì theo yêu cầu riêng cho ba lao của bạn thân. Chi tiết rất tuyệt vời, màu sắc rực rỡ, và chủ cửa hàng rất nhiệt tình giúp đỡ những yêu cầu tùy chỉnh của tôi!"</p>
         <div class="testimonial-author">
           <img class="testimonial-avatar" src="https://picsum.photos/seed/user2/80/80" alt="Minh T.">
           <div>
             <div class="testimonial-name">Minh Tran</div>
-            <div style="font-size:0.75rem;color:var(--text-light)">Hanoi</div>
+            <div style="font-size:0.75rem;color:var(--text-light)">Hà Nội</div>
           </div>
         </div>
       </div>
@@ -324,7 +317,7 @@
           <img class="testimonial-avatar" src="https://picsum.photos/seed/user3/80/80" alt="An P.">
           <div>
             <div class="testimonial-name">An Pham</div>
-            <div style="font-size:0.75rem;color:var(--text-light)">Da Nang</div>
+            <div style="font-size:0.75rem;color:var(--text-light)">Đà Nẵng</div>
           </div>
         </div>
       </div>
@@ -332,26 +325,24 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section class="section" style="background:var(--bg)">
   <div class="container">
     <div class="cta-box reveal">
-      <h2>Ready to Find Your Next Treasure?</h2>
-      <p>Browse our full collection of second-hand keychains and charms.</p>
-      <a href="shop.html" class="btn btn-white btn-lg">Browse All Keychains</a>
+      <h2>Sẵn sàng tìm kiếm chiếc móc khóa yêu thích tiếp theo?</h2>
+      <p>Khám phá trọn bộ sưu tập móc khóa len handmade thủ công vô cùng đa dạng và đáng yêu.</p>
+      <a href="shop.html" class="btn btn-white btn-lg">Xem toàn bộ sản phẩm</a>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="nav-logo" style="margin-bottom:10px">
-          <img src="assets/images/logo.png" alt="Key2hand" class="nav-logo-img"> Key2hand
+          <img src="assets/images/logo.png" alt="Key2hand" class="nav-logo-img"> DIY Keychain
         </div>
-        <p>Your favourite place for unique, affordable second-hand keychains.</p>
+        <p>Góc nhỏ tìm kiếm những chiếc móc khóa len thủ công độc đáo, dễ thương với giá cả hạt dẻ.</p>
         <div class="footer-social">
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -359,36 +350,35 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>Shop</h4>
+        <h4>Danh mục</h4>
         <ul>
-          <li><a href="shop.html?cat=Anime">Anime</a></li>
-          <li><a href="shop.html?cat=Cute">Cute</a></li>
-          <li><a href="shop.html?cat=Vintage">Vintage</a></li>
-          <li><a href="shop.html?cat=Metal">Metal</a></li>
-          <li><a href="shop.html?cat=Custom">Custom</a></li>
+          <li><a href="shop.html?cat=Flower">Hoa cỏ</a></li>
+          <li><a href="shop.html?cat=Animal">Động vật</a></li>
+          <li><a href="shop.html?cat=Fruit">Trái cây</a></li>
+          <li><a href="shop.html?cat=Custom">Theo yêu cầu</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Info</h4>
+        <h4>Thông tin</h4>
         <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="#">How to Order</a></li>
-          <li><a href="#">Shipping</a></li>
-          <li><a href="#">Returns</a></li>
+          <li><a href="about.html">Giới thiệu</a></li>
+          <li><a href="#">Cách đặt hàng</a></li>
+          <li><a href="#">Giao hàng</a></li>
+          <li><a href="#">Chính sách đổi trả</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4>Liên hệ</h4>
         <ul>
           <li><a href="#">hello@key2hand.com</a></li>
           <li><a href="#">Zalo: 090 xxx xxxx</a></li>
-          <li><a href="#">Da Nang City</a></li>
+          <li><a href="#">Đà Nẵng, Việt Nam</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Key2hand. All rights reserved.</span>
-      <span>Items are second-hand — conditions accurately described.</span>
+      <span>© 2025 Key2hand. Bảo lưu mọi quyền.</span>
+      <span>Sản phẩm đan tay thủ công — Chăm chút trên từng mũi móc.</span>
     </div>
   </div>
 </footer>
@@ -409,7 +399,7 @@
       <a href="shop.html?cat=${cat.name}" class="category-card reveal">
         <div class="category-emoji">${cat.emoji}</div>
         <h3 class="category-name">${cat.name}</h3>
-        <span class="category-count">${counts[cat.name] || 0} items</span>
+        <span class="category-count">${counts[cat.name] || 0} sản phẩm</span>
       </a>
     `).join('');
 </script>
